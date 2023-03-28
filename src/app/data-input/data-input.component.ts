@@ -28,8 +28,12 @@ export class DataInputComponent implements OnInit {
   }
 
   handleUpload() {
-    this.time = this.dataForm.value.time;
-    this.dwmy = this.dataForm.value.dwmy;
-    this.dataHandler.upload(this.time, this.dwmy, this.file);
+    if (this.file) {
+      this.time = this.dataForm.value.time;
+      this.dwmy = this.dataForm.value.dwmy;
+      this.dataHandler.upload(this.time, this.dwmy, this.file);
+    }else {
+      alert("Please select a dataset")
+    }
   }
 }

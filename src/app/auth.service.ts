@@ -9,7 +9,7 @@ export class AuthService {
 
   login(uname: string, pwd: string): Observable<boolean> {
     this.isLoggedIn = uname == 'tharunk' && pwd == 'tharunk';
-    localStorage.setItem("isLoggedIn", this.isLoggedIn ? 'true' : 'false');
+    sessionStorage.setItem("isLoggedIn", this.isLoggedIn ? 'true' : 'false');
     return of(this.isLoggedIn);
   }
 }

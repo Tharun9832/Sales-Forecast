@@ -1,14 +1,21 @@
 <app-navbar></app-navbar>
-<form action="POST" [formGroup]="dataForm" (ngSubmit)="handleUpload()">
-    <label for="time">Period: </label>
-    <input type="number" name="time" id="time" formControlName="time" required><br><br>
-    <label for="dwmy">Select one: </label>
-    <select name="dwmy" id="dwmy" formControlName="dwmy" required>
-        <option *ngFor="let item of items" [ngValue]="item">
-            {{ item }}
-        </option>
-    </select><br><br>
-    <label for="file">Upload dataset: </label>
-    <input type="file" accept=".csv,.xls,.xlsx" name="file" id="file" (change)="onChange($event)" [type]="" required><br><br>
-    <button type="submit" [disabled]="!dataForm.valid">Submit</button>
-</form>
+<div class="container">
+    <form action="POST" [formGroup]="dataForm" (ngSubmit)="handleUpload()">
+        <label for="time">
+            Period <br>
+            <input type="number" name="time" id="time" formControlName="time" required>
+        </label>
+        <label for="dwmy">
+            Select days, weeks, etc. <br>
+            <select name="dwmy" id="dwmy" formControlName="dwmy" required>
+                <option *ngFor="let item of items" [ngValue]="item">
+                    {{ item }}
+                </option>
+            </select>
+        </label>
+        <label for="file">Upload dataset <br>
+            <input type="file" accept=".csv,.xls,.xlsx" name="file" id="file" (change)="onChange($event)" [type]="" required>
+        </label>
+        <button type="submit" [disabled]="!dataForm.valid">Submit</button>
+    </form>
+</div>
