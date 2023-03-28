@@ -25,7 +25,6 @@ export class DataInputComponent implements OnInit {
 
   onChange(event: any) {
     this.file = event.target.files[0];
-    console.log(this.file);
   }
 
   handleUpload() {
