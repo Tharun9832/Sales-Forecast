@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<form action="POST" [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+    <label for="uname">Username: </label>
+    <input type="text" name="uname" id="uname" formControlName="username" required><br><br>
+    <label for="pwd">Password: </label>
+    <input type="password" name="pwd" id="pwd" formControlName="password" required><br><br>
+    <button type="submit" [disabled]="!loginForm.valid">Submit</button>
+</form>
