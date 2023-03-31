@@ -11,7 +11,7 @@ form {
     flex-direction: column;
     align-items: start;
     justify-content: space-between;
-    height: 280px;
+    height: 300px;
     font-size: 1.2rem;
 }
 
@@ -26,6 +26,7 @@ input {
 
 button, select {
     padding: 10px 15px;
+    width: 150px;
     background: none;
     font-size: 1rem;
     outline: none;
@@ -36,9 +37,27 @@ button, select {
     transition: 0.3s;
 }
 
-button:hover {
+button:hover, .custom-button:hover {
     color: black;
-    background-color: white;
+    background-color: whitesmoke;
     border: 2px solid black;
     cursor: pointer;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+.custom-button {
+    border: 2px solid black;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: whitesmoke;
+    background-color: black;
+    font-size: 1rem;
+    width: 150px;
+    text-align: center;
+    transition: 0.3s;
 }

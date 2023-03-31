@@ -3,7 +3,7 @@
     <form action="POST" [formGroup]="dataForm" (ngSubmit)="handleUpload()">
         <label for="time">
             Period <br>
-            <input type="number" name="time" id="time" formControlName="time" required>
+            <input type="number" min="1" name="time" id="time" formControlName="time" required>
         </label>
         <label for="dwmy">
             Select days, weeks, etc. <br>
@@ -13,9 +13,9 @@
                 </option>
             </select>
         </label>
-        <label for="file">Upload dataset <br>
+        <label for="file" class="custom-button">{{ fileName }}<br>
             <input type="file" accept=".csv,.xls,.xlsx" name="file" id="file" (change)="onChange($event)" [type]="" required>
         </label>
-        <button type="submit" [disabled]="!dataForm.valid">Submit</button>
+        <span><button type="submit" [disabled]="!dataForm.valid">Predict sales</button> for {{ dataForm.value.time + " " + dataForm.value.dwmy }}</span>
     </form>
 </div>
