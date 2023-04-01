@@ -5,3 +5,30 @@
     align-items: center;
     justify-content: center;
 }
+
+.back-button {
+    position: fixed;
+    width: 80px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    width: 150px;
+    background: none;
+    font-size: 1rem;
+    outline: none;
+    background-color: black;
+    border: 2px solid black;
+    color: whitesmoke;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover, .custom-button:hover {
+    color: black;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    cursor: pointer;
+}

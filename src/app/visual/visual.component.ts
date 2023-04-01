@@ -52,4 +52,8 @@ export class VisualComponent implements OnInit {
     ]
   }
 
+  goBack() {
+    this.router.navigate(['data-input']);
+  }
+
 }

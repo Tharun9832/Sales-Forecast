@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataHandlerService } from '../data-handler.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-data-input',
@@ -17,7 +18,7 @@ export class DataInputComponent implements OnInit {
   fileName: string = "Upload dataset"
   items: string[] = ['day(s)', 'week(s)', 'month(s)', 'year(s)'];
 
-  constructor(private dataHandler: DataHandlerService, private httpClient: HttpClient, private router: Router) {}
+  constructor(private dataHandler: DataHandlerService, private httpClient: HttpClient, private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.dataForm = new FormGroup({
@@ -51,5 +52,14 @@ export class DataInputComponent implements OnInit {
     }else {
       alert("Please select a dataset")
     }
+  }
+
+  goBack() {
+    this.router.navigate(['']);
+  }
+
+  logOut() {
+    this.authService.logout();
+    this.router.navigate(['']);
   }
 }

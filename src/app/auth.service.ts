@@ -15,4 +15,9 @@ export class AuthService {
     }
     return of(this.isLoggedIn)
   }
+
+  logout() {
+    this.isLoggedIn = false;
+    sessionStorage.setItem("isLoggedIn", 'false');
+  }
 }

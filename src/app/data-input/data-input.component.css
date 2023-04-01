@@ -61,3 +61,15 @@ input[type='file'] {
     text-align: center;
     transition: 0.3s;
 }
+
+.back-button {
+    position: fixed;
+    width: 80px;
+    margin-left: 20px;
+}
+
+.logout-button {
+    position: fixed;
+    width: 80px;
+    right: 20px;
+}
