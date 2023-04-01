@@ -14,7 +14,7 @@
             </select>
         </label>
         <label for="file" class="custom-button">{{ fileName }}<br>
-            <input type="file" accept=".csv,.xls,.xlsx" name="file" id="file" (change)="onChange($event)" [type]="" required>
+            <input type="file" accept=".csv" name="file" id="file" (change)="onChange($event)" [type]="" required>
         </label>
         <span><button type="submit" [disabled]="!dataForm.valid">Predict sales</button> for {{ dataForm.value.time + " " + dataForm.value.dwmy }}</span>
     </form>

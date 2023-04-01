@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -7,15 +6,15 @@ import { Observable, of } from 'rxjs';
 })
 export class DataHandlerService {
 
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
-  data!: File;
+  data!: string;
 
-  setData(data: File) {
+  setData(data: string) {
     this.data = data;
   }
 
-  getData(): Observable<File> {
+  getData(): Observable<string> {
     return of(this.data);
   }
 }

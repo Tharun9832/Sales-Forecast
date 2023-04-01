@@ -15,7 +15,7 @@ export class DataInputComponent implements OnInit {
   dwmy!: string;
   file!: File;
   fileName: string = "Upload dataset"
-  items: string[] = ['day(s)', 'week(s)', 'month(s)', 'years(s)'];
+  items: string[] = ['day(s)', 'week(s)', 'month(s)', 'year(s)'];
 
   constructor(private dataHandler: DataHandlerService, private httpClient: HttpClient, private router: Router) {}
 
@@ -36,11 +36,10 @@ export class DataInputComponent implements OnInit {
     formData.set("number", number);
     formData.set("period", period);
     formData.set("file", file)
-    this.httpClient.post('http://127.0.0.1:5000/data-input', formData, { responseType:'blob' })
-      .subscribe((resp: Blob)=> {
-        var file = new File([resp], "futureData.csv");
-        this.dataHandler.setData(file);
-        this.router.navigate(['visual'])
+    this.httpClient.post('http://127.0.0.1:5000/data-input', formData, { responseType:'text' })
+      .subscribe((resp: string) => {
+        this.router.navigate(['visual']);
+        this.dataHandler.setData(resp);
       });
   }
 

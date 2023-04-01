@@ -10,6 +10,9 @@ export class AuthService {
   login(uname: string, pwd: string): Observable<boolean> {
     this.isLoggedIn = uname == 'tharunk' && pwd == 'tharunk';
     sessionStorage.setItem("isLoggedIn", this.isLoggedIn ? 'true' : 'false');
-    return of(this.isLoggedIn);
+    if (!this.isLoggedIn) {
+      alert("Check you credentials!")
+    }
+    return of(this.isLoggedIn)
   }
 }
