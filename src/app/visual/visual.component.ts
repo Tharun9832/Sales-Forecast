@@ -34,11 +34,6 @@ export class VisualComponent implements OnInit {
         this.chartData.push(parseFloat(sales))
       }
     });
-
-    console.log(this.labels);
-    console.log(this.chartData);
-    
-    
   }
 
   lineChartData = {

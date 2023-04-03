@@ -50,7 +50,7 @@ export class DataInputComponent implements OnInit {
       this.dwmy = this.dataForm.value.dwmy;
       this.upload(this.time, this.dwmy, this.file)
     }else {
-      alert("Please select a dataset")
+      alert("Please select a dataset");
     }
   }
 

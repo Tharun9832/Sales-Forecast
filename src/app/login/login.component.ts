@@ -30,6 +30,6 @@ export class LoginComponent implements OnInit {
         if (val) {
           this.router.navigate(['data-input']);
         }
-      })
+      });
   }
 }
