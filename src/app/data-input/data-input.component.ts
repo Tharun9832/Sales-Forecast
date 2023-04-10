@@ -54,10 +54,6 @@ export class DataInputComponent implements OnInit {
     }
   }
 
-  goBack() {
-    this.router.navigate(['']);
-  }
-
   logOut() {
     this.authService.logout();
     this.router.navigate(['']);
